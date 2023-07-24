@@ -11,8 +11,6 @@ class ProductPage(BasePage):
     def basket_price_should_be_equal_product_price(self):
         price_of_product = self.browser.find_element(*ProductPageLocators.PRICE_OF_MAIN_PRODUCT)
         basket_price = self.browser.find_element(*ProductPageLocators.BASKET_PRICE)
-        print(price_of_product.text)
-        print(basket_price.text)
         assert basket_price.text == price_of_product.text, f"expected '{basket_price}' to be  '{price_of_product}'"
     
         
